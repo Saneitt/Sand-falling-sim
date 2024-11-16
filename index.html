@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sand Falling Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e2e2e2, #c9d6ff);
+            font-family: Arial, sans-serif;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game-area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .container {
+            position: relative;
+            width: 480px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            border: 5px solid rgba(173, 216, 230, 0.8); /* Light blue glass-like border */
+            border-radius: 50% / 10%; /* Rounded edges for a beaker effect */
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden; /* Ensure particles stay inside the container */
+        }
+
+        canvas {
+            border: none; /* No border on canvas itself */
+            display: block;
+        }
+
+        .text-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #333, #555); /* Dark gradient */
+            border: 2px solid #aaa;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-box-content {
+            text-align: center;
+        }
+
+        .text-box-content h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #fff; /* White text for contrast */
+        }
+
+        .text-box-content p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #ddd; /* Light gray for author name */
+        }
+
+        .text-box-content a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .text-box-content a:hover {
+            color: #45a049;
+        }
+
+        .text-box-content a:active {
+            color: #3e8e41;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:active {
+            background-color: #3e8e41;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-area">
+            <div class="container">
+                <canvas id="sandbox" width="480" height="500"></canvas>
+            </div>
+            <div class="text-box">
+                <div class="text-box-content">
+                    <h3>I made this sand falling simulator game thing because it's fun</h3>
+                    <p>- Sannith Vanamala</p>
+                    <a href="https://github.com/Saneitt" target="_blank">Git: https://github.com/Saneitt</a>
+                </div>
+            </div>
+        </div>
+        <button id="resetButton">Reset Sand</button>
+    </div>
+    <script src="sand.js"></script>
+</body>
+</html>
